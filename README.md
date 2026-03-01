@@ -8,33 +8,20 @@ In this game, the computer generates a secret 4-digit number, and the player att
 The player continues guessing until the correct code is found. Repetition of digits is not allowed.
 
  Features:
+a.Random secret code generation using Python’s random module
+b.Loop-based gameplay until the correct guess
+c.Conditional logic for comparing digits
+d.Beginner-friendly implementation
 
-Random secret code generation using Python’s random module
-
-Loop-based gameplay until the correct guess
-
-Conditional logic for comparing digits
-
-Beginner-friendly implementation
-
- Purpose
-
-This project was created to:
-
-Practice Python fundamentals
-
-Understand loops and conditional statements
-
-Learn basic game logic implementation
-
-Build problem-solving skills
+ Purpose:
+a.This project was created to:
+b.Practice Python fundamentals
+c.Understand loops and conditional statements
+d.Learn basic game logic implementation
+e.Build problem-solving skills
 
  Technologies Used:
-
-Python
-
-Random module
-
-Conditional statements
-
-Loops
+a.Python
+b.Random module
+c.Conditional statements
+d.Loops
