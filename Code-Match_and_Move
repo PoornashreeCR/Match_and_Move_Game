@@ -1,0 +1,91 @@
+import random
+
+
+def get_digits(num):
+    """Return list of digits of a number."""
+    return [int(i) for i in str(num)]
+
+
+def has_no_duplicates(num):
+    """Check if number has no repeated digits."""
+    digits = get_digits(num)
+    return len(digits) == len(set(digits))
+
+
+def generate_number():
+    """Generate a random 4-digit number with unique digits."""
+    while True:
+        num = random.randint(1000, 9999)
+        if has_no_duplicates(num):
+            return num
+
+
+def calculate_match_move(secret, guess):
+    """
+    Returns:
+        matches -> correct digit in correct position
+        moves   -> correct digit in wrong position
+    """
+    matches = 0
+    moves = 0
+
+    secret_digits = get_digits(secret)
+    guess_digits = get_digits(guess)
+
+    for s, g in zip(secret_digits, guess_digits):
+        if g in secret_digits:
+            if g == s:
+                matches += 1
+            else:
+                moves += 1
+
+    return matches, moves
+
+
+def main():
+    print("\n🎮 Welcome to Match & Move Game!")
+    print("Guess the 4-digit secret number (no repeated digits).\n")
+
+    secret_number = generate_number()
+
+    while True:
+        try:
+            tries = int(input("Enter number of tries: "))
+            if tries > 0:
+                break
+            else:
+                print("Please enter a positive number.")
+        except ValueError:
+            print("Invalid input. Enter a number.")
+
+    while tries > 0:
+        try:
+            guess = int(input("\nEnter your guess: "))
+
+            if guess < 1000 or guess > 9999:
+                print("⚠ Enter a 4-digit number only.")
+                continue
+
+            if not has_no_duplicates(guess):
+                print("⚠ Digits must not repeat.")
+                continue
+
+        except ValueError:
+            print("⚠ Invalid input. Enter numbers only.")
+            continue
+
+        matches, moves = calculate_match_move(secret_number, guess)
+        print(f"{matches} Match, {moves} Move")
+
+        if matches == 4:
+            print("\n Congratulations! You guessed the number!")
+            return
+
+        tries -= 1
+        print(f"Tries left: {tries}")
+
+    print(f"\n Game Over! The secret number was {secret_number}")
+
+
+if __name__ == "__main__":
+    main()
