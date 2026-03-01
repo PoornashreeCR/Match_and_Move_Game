@@ -1,27 +1,32 @@
-# Match_and_Move_Game
-Match and Move is an interactive code-breaking game built using Python.
+# Match_and_Move_Game 
 
-In this game, the computer generates a secret 4-digit number, and the player attempts to guess it. After each guess:
- Match – A correct digit in the correct position
- Move – A correct digit in the wrong position
+Match and Move is a classic code-breaking game built using Python.
 
-The player continues guessing until the correct code is found. Repetition of digits is not allowed.
+The computer generates a secret 4-digit number with no repeated digits.  
+The player must guess the number within limited tries.
 
- Features:
-a.Random secret code generation using Python’s random module
-b.Loop-based gameplay until the correct guess
-c.Conditional logic for comparing digits
-d.Beginner-friendly implementation
+How It Works
 
- Purpose:
-a.This project was created to:
-b.Practice Python fundamentals
-c.Understand loops and conditional statements
-d.Learn basic game logic implementation
-e.Build problem-solving skills
+- Match → Correct digit in correct position  
+- Move  → Correct digit in wrong position  
 
- Technologies Used:
-a.Python
-b.Random module
-c.Conditional statements
-d.Loops
+The game continues until:
+- The player guesses correctly, OR
+- The player runs out of tries
+
+ Features
+
+✔ Random secret number generation  
+✔ Input validation  
+✔ No repeated digits allowed  
+✔ Clean and modular code  
+✔ Beginner-friendly structure  
+
+
+ Technologies Used
+
+- Python 3
+- Random module
+
+
+
